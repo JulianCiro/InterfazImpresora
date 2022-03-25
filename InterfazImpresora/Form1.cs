@@ -440,6 +440,7 @@ namespace InterfazImpresora
             int aux2 = Convert.ToInt32(aux[0]);
             responseData = responseData + String.Format("{0:00000000}", aux2);
             //txtRespuestaImp.Text = responseData;
+            //tecto de prueba
             return responseData;
         }
 
