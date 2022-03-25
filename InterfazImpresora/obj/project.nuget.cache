@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fH/TRMSobHgN0EWvQv1W8rkWIt3wZQ/+q92hUrcxHEBCO/XZazBv4liPkRe/mNawLJceBQPBv9LSGcD4krMMzA==",
+  "dgSpecHash": "ZiIRiealYWOEMs9VvhXbOr62zTU/EpkJDy5zjmZKXU+PDL6tXbdyJUw6CN1fn6a2qyfaJkVgl8Sa4wy9dslOZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora - copia\\InterfazImpresora\\InterfazImpresora.csproj",
+  "projectFilePath": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora\\InterfazImpresora\\InterfazImpresora.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Intecol\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Intecol\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

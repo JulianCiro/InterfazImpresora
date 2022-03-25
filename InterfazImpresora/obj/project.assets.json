@@ -510,11 +510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora - copia\\InterfazImpresora\\InterfazImpresora.csproj",
+      "projectUniqueName": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora\\InterfazImpresora\\InterfazImpresora.csproj",
       "projectName": "InterfazImpresora",
-      "projectPath": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora - copia\\InterfazImpresora\\InterfazImpresora.csproj",
+      "projectPath": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora\\InterfazImpresora\\InterfazImpresora.csproj",
       "packagesPath": "C:\\Users\\Intecol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora - copia\\InterfazImpresora\\obj\\",
+      "outputPath": "C:\\Users\\Intecol\\Pictures\\InterfazImpresora\\InterfazImpresora\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

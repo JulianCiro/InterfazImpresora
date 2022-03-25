@@ -180,3 +180,30 @@ C:\Users\Intecol\Pictures\InterfazImpresora - copia\InterfazImpresora\obj\Debug\
 C:\Users\Intecol\Pictures\InterfazImpresora - copia\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.pdb
 C:\Users\Intecol\Pictures\InterfazImpresora - copia\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.genruntimeconfig.cache
 C:\Users\Intecol\Pictures\InterfazImpresora - copia\InterfazImpresora\obj\Debug\net6.0-windows\ref\InterfazImpresora.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\InterfazImpresora.exe
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\InterfazImpresora.deps.json
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\InterfazImpresora.runtimeconfig.json
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\InterfazImpresora.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\InterfazImpresora.pdb
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\S7.Net.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\Sharp7.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.csproj.AssemblyReference.cache
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.Form1.resources
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.Properties.Resources.resources
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.csproj.GenerateResource.cache
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.AssemblyInfoInputs.cache
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.AssemblyInfo.cs
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.csproj.CoreCompileInputs.cache
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.csproj.CopyComplete
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\refint\InterfazImpresora.dll
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.pdb
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\InterfazImpresora.genruntimeconfig.cache
+C:\Users\Intecol\Pictures\InterfazImpresora\InterfazImpresora\obj\Debug\net6.0-windows\ref\InterfazImpresora.dll

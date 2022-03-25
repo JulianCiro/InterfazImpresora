@@ -19,16 +19,16 @@ namespace InterfazImpresora
 
         public Form1()
         {
-            InitializeComponent();
-
+            
 
 
             //Thread hiloCodigos = new Thread(new ThreadStart(GenerarCodigo));
             //hiloCodigos.Start();
 
-            Thread hiloEstados = new Thread(new ThreadStart(EscribirSensorImpresora));
-            hiloEstados.Start();
+            
             //hiloEstados.Join();
+            InitializeComponent();
+
 
             if (!chkRemoto.Checked)
             {
@@ -45,10 +45,10 @@ namespace InterfazImpresora
                 btnMotorAtras.Enabled = false;
                 btnMotorAdelante.Enabled = false;
             }
-
+            
             //plclab.Write("DB5.DBX4.2", false);
 
-            
+
 
         }
 
@@ -247,16 +247,17 @@ namespace InterfazImpresora
                 String codigo = String.Empty;
                 codigo = Taller + CodigoProducto.ToString();// + String.Format("{0:00000000}", Empezar);
                 txtCodigoImpreso.Text = codigo;
+
                 /**/
-                Byte[] data = Encoding.ASCII.GetBytes("^0?RS.");
+                Byte[] data = Encoding.ASCII.GetBytes("^0=ET"+codigo+".");
                 data[data.Length - 1] = 13;
                 stream.Write(data, 0, data.Length);
 
-                data = new byte[256];
-                String responseData = String.Empty;
-                Int32 bytes = stream.Read(data, 0, data.Length);
-                responseData = Encoding.ASCII.GetString(data, 0, bytes);
-                string[] estadoSensor = responseData.Split();
+                //data = new byte[256];
+                //String responseData = String.Empty;
+                //Int32 bytes = stream.Read(data, 0, data.Length);
+                //responseData = Encoding.ASCII.GetString(data, 0, bytes);
+                //string[] estadoSensor = responseData.Split();
 
                 //Byte[] values = S7.Net.Types.String.ToByteArray(codigo);
                 // plclab.Write("DB5.DBX6.0", codigo);
@@ -344,7 +345,7 @@ namespace InterfazImpresora
         private void btnPreguntar_Click(object sender, EventArgs e)
         {
             //PreguntarEstados();
-            Preguntar();
+           
 
         }
 
@@ -375,89 +376,114 @@ namespace InterfazImpresora
         {
             while (true)
             {
-                //try
-                //{
-                //    Byte[] data = Encoding.ASCII.GetBytes("^0?EX.");
-                //    data[data.Length - 1] = 13;
-                //    stream.Write(data, 0, data.Length);
-
-                //    data = new byte[256];
-                //    String responseData = String.Empty;
-                //    Int32 bytes = stream.Read(data, 0, data.Length);
-                //    responseData = Encoding.ASCII.GetString(data, 0, bytes);
-                //    string[] estadoSensor = responseData.Split();
-
-                //    if (estadoSensor[4] == "1")
-                //    {
-                //        plclab.Write("DB5.DBX4.6", true);
-
-                //    }
-                //    else
-                //    {
-                //        plclab.Write("DB5.DBX4.6", false);
-                //    }
-                //}
-                //catch (Exception)
-                //{
-
-                //    throw;
-                //}
-
-
-            }
-
-
-        }        
-        
-        public void Preguntar()
-        {
-            //while (true)
-            {
                 try
                 {
-                    //Byte[] data = Encoding.ASCII.GetBytes("^0?EX.");
-                    //data[data.Length - 1] = 13;
-                    //stream.Write(data, 0, data.Length);
+                    Byte[] data = Encoding.ASCII.GetBytes("^0?EX.");
+                    data[data.Length - 1] = 13;
+                    stream.Write(data, 0, data.Length);
 
-                    //data = new byte[256];
-                    //String responseData = String.Empty;
-                    //Int32 bytes = stream.Read(data, 0, data.Length);
-                    //responseData = Encoding.ASCII.GetString(data, 0, bytes);
-                    //string[] estadoSensor = responseData.Split();
+                    data = new byte[256];
+                    String responseData = String.Empty;
+                    Int32 bytes = stream.Read(data, 0, data.Length);
+                    responseData = Encoding.ASCII.GetString(data, 0, bytes);
+                    string[] estadoSensor = responseData.Split();
 
-                    //if (estadoSensor[4] == "1")
-                    //{a
-                    //}}
-                    string mensaje = "Julian ";
-                    plclab.Write(DataType.DataBlock, 5, 264, mensaje); ;
-                    var lectura = (plclab.Read(DataType.DataBlock, 5, 8, varType: VarType.String, 13));
+                    if (estadoSensor[4] == "1")
+                    {
+                        plclab.Write("DB5.DBX4.6", true);
+
+                        Thread.Sleep(300);
+                        EscribirCodigoImpresoPlc();
+
+
+                    }
+                    else
+                    {
+                        plclab.Write("DB5.DBX4.6", false);
+                    }
                 }
                 catch (Exception)
                 {
 
                     throw;
                 }
+            }
+        }
+
+
+        public string ConsultarCodigoImpresora()
+        {
+            Byte[] data = Encoding.ASCII.GetBytes("^0?ET\r\n");
+            //data[data.Length - 1] = 13;
+            stream.Write(data, 0, data.Length);            
+
+            data = new byte[256];
+            String responseData = String.Empty;
+            Int32 bytes = stream.Read(data, 0, data.Length);
+            responseData = Encoding.ASCII.GetString(data, 0, bytes);
+
+            data = Encoding.ASCII.GetBytes("^0?CC\r\n");
+            //data[data.Length - 1] = 13;
+            stream.Write(data, 0, data.Length);
+
+            data = new byte[256];
+            bytes = stream.Read(data, 0, data.Length);
+            responseData = responseData + Encoding.ASCII.GetString(data, 0, bytes);
+
+            /* "^0=ETMul16\r^0=CC182\t0\t\r"  */
+
+            string[] aux = responseData.Split('T');
+            aux = aux[1].Split('\r');
+            responseData = aux[0];
+            aux = aux[1].Split('C');
+            aux = aux[2].Split('\t');
+            int aux2 = Convert.ToInt32(aux[0]);
+            responseData = responseData + String.Format("{0:00000000}", aux2);
+            //txtRespuestaImp.Text = responseData;
+            return responseData;
+        }
+
+        
+        public void EscribirCodigoImpresoPlc()
+        {
+            try
+            {
+
+                string mensaje = ConsultarCodigoImpresora();
+                plclab.Write(DataType.DataBlock, 5, 264, mensaje); ;
+                var lectura = (plclab.Read(DataType.DataBlock, 5, 8, varType: VarType.String, 13));
+
+                //string mensaje1 = "santiago";
+                //plclab.Write(DataType.DataBlock, 5, 264, mensaje1);
+                
+                //string mensaje2 = "santiago";
+                //plclab.Write(DataType.DataBlock, 5, 264, mensaje2); 
+
+                //string mensaje3 = "santiago";
+                //plclab.Write(DataType.DataBlock, 5, 264, mensaje3);
+
+                //string mensaje4 = "santiago";
+                //plclab.Write(DataType.DataBlock, 5, 264, mensaje4);
+
+                //string mensaje5 = "santiago";
+                //plclab.Write(DataType.DataBlock, 5, 264, mensaje5);
+
+                //string mensaje6 = "santiago";
+                //plclab.Write(DataType.DataBlock, 5, 264, mensaje6);
+
 
 
             }
+            catch (Exception)
+            {
 
+                throw;
+            }
 
         }
 
         public void PreguntarEstados()
         {
-            //for(int i = 0; i < 10; i++)
-            //{
-            //bool aux = (bool)plclab.Read("DB7.DBX4.0");
-            //if (aux == true)
-            //{
-            //    textBox1.Text = "Paro de emergencia activo";
-            //}
-            //else
-            //{
-            //    textBox1.Text = "";
-            //}
-            //}
             bool aux;
             /**/
             aux = (bool)plclab.Read("DB7.DBX4.0");
@@ -560,8 +586,10 @@ namespace InterfazImpresora
 
                 impresora = new TcpClient(ipImpr, PuertoImp);
                 stream = impresora.GetStream();
-                //Acción para deshabilitar botones de comando remoto cuando remoto.cheked =false
+            
 
+                Thread hiloEstados = new Thread(new ThreadStart(EscribirSensorImpresora));
+                hiloEstados.Start();
 
 
             }
@@ -572,6 +600,6 @@ namespace InterfazImpresora
 
         }
     }
-    //todo: recordar que al cerrar la aplicación se debe llevar al estado de inicio remoto =false
+  
 }
 
