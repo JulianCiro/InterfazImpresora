@@ -253,29 +253,7 @@ namespace InterfazImpresora
                 data[data.Length - 1] = 13;
                 stream.Write(data, 0, data.Length);
 
-                //data = new byte[256];
-                //String responseData = String.Empty;
-                //Int32 bytes = stream.Read(data, 0, data.Length);
-                //responseData = Encoding.ASCII.GetString(data, 0, bytes);
-                //string[] estadoSensor = responseData.Split();
-
-                //Byte[] values = S7.Net.Types.String.ToByteArray(codigo);
-                // plclab.Write("DB5.DBX6.0", codigo);
-
-                // se comenta por que entraba en false la señal del sensor estando activo el hilo
-
-                //if (estadoSensor[1] == "1")
-                //{
-                //    plclab.Write("DB5.DBX4.6", true);
-                //    Byte[] codigoImpresora = Encoding.ASCII.GetBytes("^0!ET" + codigo + ".");
-                //    codigoImpresora[codigoImpresora.Length - 1] = 13;
-                //    stream.Write(codigoImpresora, 0, codigoImpresora.Length);
-                //    Empezar++;
-                //}
-                //else                             
-                //{
-                //    plclab.Write("DB5.DBX4.6", false);
-                //}
+        
             }
         }
 
@@ -453,26 +431,6 @@ namespace InterfazImpresora
                 string mensaje = ConsultarCodigoImpresora();
                 plclab.Write(DataType.DataBlock, 5, 264, mensaje); ;
                 var lectura = (plclab.Read(DataType.DataBlock, 5, 8, varType: VarType.String, 13));
-
-                //string mensaje1 = "santiago";
-                //plclab.Write(DataType.DataBlock, 5, 264, mensaje1);
-                
-                //string mensaje2 = "santiago";
-                //plclab.Write(DataType.DataBlock, 5, 264, mensaje2); 
-
-                //string mensaje3 = "santiago";
-                //plclab.Write(DataType.DataBlock, 5, 264, mensaje3);
-
-                //string mensaje4 = "santiago";
-                //plclab.Write(DataType.DataBlock, 5, 264, mensaje4);
-
-                //string mensaje5 = "santiago";
-                //plclab.Write(DataType.DataBlock, 5, 264, mensaje5);
-
-                //string mensaje6 = "santiago";
-                //plclab.Write(DataType.DataBlock, 5, 264, mensaje6);
-
-
 
             }
             catch (Exception)
